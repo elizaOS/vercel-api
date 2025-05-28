@@ -40,9 +40,10 @@ function getContentTypeFromExtension(filename: string): string | null {
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { fileId: string } }
+  context: { params: Promise<{ fileId: string }> }
 ) {
   try {
+    const params = await context.params;
     const { fileId } = params;
     
     if (!fileId) {
