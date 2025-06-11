@@ -159,7 +159,7 @@ const response = await fetch('http://localhost:3000/api/plugins/registry');
 const data = await response.json();
 
 // Access plugin information
-const pluginInfo = data.registry['@elizaos/plugin-twitter'];
+const pluginInfo = data.registry['@elizaos/plugin-farcaster'];
 console.log('Supports v1:', pluginInfo.supports.v1);
 console.log('Latest v1 version:', pluginInfo.npm.v1);
 ```
